@@ -8,7 +8,7 @@ import time
 root = Tk()
 
 root['bg'] = 'white'
-root.title('Шифр Цезаря')
+root.title('Метод анализа иерархий')
 root.geometry('730x350')
 
 root.resizable(width=False, height=False)
@@ -97,6 +97,5 @@ space1.grid(row=5, column=1)
 
 btn1 = Button(frame, text='Ввод', bg='white', command=btn_click, width=5, height=1)
 btn1.grid(row=6, column=1)
-
 
 mainloop()
