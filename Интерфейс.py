@@ -32,7 +32,7 @@ def func(e):
     num = textInput.get()
     num = int(num)
 
-
+    check = 0
     error = 0
     textInput.delete(0, END)
     M = np.ones([num, num])  # Создаем матрицу
@@ -49,6 +49,7 @@ def func(e):
                     matrixij = textInput.get()
                     if matrixij == '1':
                         error += 1
+                    check += 1
                     textInput.delete(0, END)
                     M[i, j] = float(matrixij)
                     M[j, i] = 1 / float(matrixij)  # Добавление обратных элементов (под главной диагональю)
@@ -60,7 +61,7 @@ def func(e):
     text2["text"] = ''
     v = np.linalg.eig(M)[1][:, 0]
     nv = v / v.sum()
-    if error == num:
+    if error == check:
         text3 = Label(frame, text="Ваши критерии равносильны", bg='white')
         text3.grid(row=2, column=1)
     else:
